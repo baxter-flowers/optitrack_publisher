@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package>
+  <name>optitrack_publisher</name>
+  <version>0.0.0</version>
+  <description>Node publishing rigid bodies received via VRPN in your ROS environment in the form of tf transforms.</description>
+  <maintainer email="yoan.mollard@inria.fr">Yoan Mollard</maintainer>
+  <url type="website">http://flowers.inria.fr</url>
+  <license>GPL3</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <export>
+  </export>
+</package>
