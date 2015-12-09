@@ -3,6 +3,7 @@
   <arg name="port" default="3884" /> <!-- Port of the VRPN server (default 3883) -->
   <arg name="dt" default="0.1" /> <!-- Delta T in seconds whilst a marker is still considered tracked -->
   <arg name="world" default="base" /> <!-- Name of the robot's world frame -->
+  <arg name="output" default="screen" /> <!-- Set to "log" to avoid warnings about untracked objects -->
 
   <param name="optitrack/vrpn_ip" type="string" value="$(arg ip)" />
   <param name="optitrack/vrpn_port" type="string" value="$(arg port)" />
@@ -10,6 +11,6 @@
   <param name="optitrack/world_frame" type="string" value="$(arg world)" />
 
   <rosparam command="load" file="$(find optitrack_publisher)/config/calibration_matrix.yaml" param="optitrack/calibration_matrix"/>
-  <node name="optitrack_publisher" pkg="optitrack_publisher" type="optitrack_publisher.py" output="screen"/>
+  <node name="optitrack_publisher" pkg="optitrack_publisher" type="optitrack_publisher.py" output="$(arg output)"/>
   
 </launch>
