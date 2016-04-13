@@ -1,5 +1,5 @@
 <launch>  
-  <arg name="ip" /> <!-- IP of the VRPN server (like Motive or Arena). -->
+  <arg name="ip" default="BAXTERFLOWERS.local"/> <!-- IP of the VRPN server (like Motive or Arena). -->
   <arg name="port" default="3884" /> <!-- Port of the VRPN server (default 3883) -->
   <arg name="dt" default="0.1" /> <!-- Delta T in seconds whilst a marker is still considered tracked -->
   <arg name="world" default="base" /> <!-- Name of the robot's world frame -->
