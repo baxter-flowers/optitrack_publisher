@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>  
   <arg name="ip" /> <!-- IP of the VRPN server (like Motive or Arena). -->
   <arg name="port" default="3884" /> <!-- Port of the VRPN server (default 3883) -->
