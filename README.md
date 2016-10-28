@@ -5,7 +5,17 @@ Data is gathered through the embedded VRPN server of Motive/Arena.
 Only rigid bodies are requested to the server, thus single points in 2D/3D are ignored.
 VRPN server can be enable in View > Data streaming in Motive.
 
-# Publish
+## Dependencies
+Install [VRPN for Python](https://github.com/vrpn/vrpn/wiki):
+```
+git clone https://github.com/vrpn/vrpn.git
+cd vrpn/python
+nano GNUmakefile
+# set HW_OS := pc_linux64
+make && sudo make install
+```
+
+## Publish
 The optitrack publisher script publishes rigid bodies as tf::Transform(). Coordinates are directly
 broadcasted without any additional transform, with a frame_id set to "optitrack_frame". Thus two tf
 trees are present: one with the root being the robot's root ("base" or "base_link") and another one
@@ -24,7 +34,7 @@ Then launch the publisher by specifying the IP of the the VRPN server (the PC ru
 roslaunch optitrack_publisher optitrack_publisher.launch ip:=<ip of the VRPN server> port:=<port of the VPRN server> world:=<name of the robot's world frame e.g. base, base_link...>
 ```
 
-# Calibrate
+## Calibrate
 Running the previous publishing without prior calibration will show an incorrect pose of the `optitrack_frame` within the robot's world frame.
 This calibration operates by recording points in both frames (optitrack and robot frames) and matching them by minimizing a cost function.
 
