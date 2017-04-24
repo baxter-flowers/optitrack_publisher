@@ -8,10 +8,12 @@ VRPN server can be enable in View > Data streaming in Motive.
 ## Dependencies
 Install [VRPN for Python](https://github.com/vrpn/vrpn/wiki):
 ```
-git clone https://github.com/vrpn/vrpn.git
+git clone --recursive https://github.com/vrpn/vrpn.git
 cd vrpn/python
 nano GNUmakefile
+# Uncomment in this file the architecture corresponding to your machine, most probably:
 # set HW_OS := pc_linux64
+# Save and exit: Ctrl-W, Y
 make && sudo make install
 ```
 
